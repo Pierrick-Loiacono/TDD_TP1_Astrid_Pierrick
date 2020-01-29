@@ -1,0 +1,18 @@
+{
+    "name": "pierrick/tdd_tp1_astrid_pierrick",
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "authors": [
+        {
+            "name": "Pierrick",
+            "email": "pierrick.loiacono@arrobe.fr"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {}
+}
