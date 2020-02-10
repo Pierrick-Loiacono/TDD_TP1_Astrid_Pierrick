@@ -30,5 +30,12 @@ final class AdherentTest extends TestCase
 
     }
 
+    public function testAccent(){
+        $adherent = new Adherent('bossy', 'astridÉÈÀé', new dateTime("01-01-2010"));
+        $this->assertEquals(strtoupper($adherent->replaceAccents($adherent->getPrenom())),
+            'ASTRIDEEAE'
+        );
+    }
+
 
 }
