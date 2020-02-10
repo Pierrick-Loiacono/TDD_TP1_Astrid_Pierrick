@@ -7,7 +7,7 @@ final class AdherentTest extends TestCase
 {
 
     public function testCanBeCreated(){
-        $adherent = new Adherent('bossy', 'astrid', '01/01/1999');
+        $adherent = new Adherent('bossy', 'astrid', new dateTime("01-01-2010"));
         $this->assertInstanceOf(
             Adherent::class,
             $adherent
@@ -15,10 +15,19 @@ final class AdherentTest extends TestCase
     }
 
     public function testCreateName(){
-        $adherent = new Adherent('bossy', 'astrid', '01/01/1999');
+        $adherent = new Adherent('bossy', 'astrid', new dateTime("01-01-2010"));
         $this->assertEquals('BOSSY',
             $adherent->getNom()
         );
+    }
+
+    public function testConcatenation(){
+        $adherent = new Adherent('bossy', 'astrid', new dateTime("01-01-2010"));
+
+        $this->assertEquals($adherent->getNom().$adherent->getPrenom().$adherent->getDateNaissance(),
+            $adherent->getAllConcat()
+        );
+
     }
 
 
